@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate') %>   
+<!-- this automatically searches in views folder -->
+ <!-- boilerplate.ejs has flash.ejs included in it -->
+
+<body>
+  <h3>Wander. Stay. Repeat.</h3>
+  
+  <br>
+  
+  <div
+    class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 justify-content-around"
+  >
+    <% for(listing of allListings){ %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card card-listing" style="width: 18rem">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top"
+          alt="404 Not Found"
+          style="height: 20rem"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %> </b><br />
+            ₹<%=listing.price.toLocaleString("en-IN") %>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <% } %>
+  </div>
+</body>

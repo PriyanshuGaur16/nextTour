@@ -1,0 +1,24 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <h3 class="mt-2 mb-2 offset-3">Change Password</h3>
+    <div class="col-5 offset-3">
+        <form action="/change-password" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="oldpassword" class="form-label">Enter old password</label>
+                <input type="password" class="form-control" name="oldPassword" id="oldpassword" required>
+                <div class="invalid-feedback">
+                    Enter old password
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="newpassword" class="form-label">Enter new password</label>
+                <input type="password" class="form-control" name="newPassword" id="newpassword" required>
+                <div class="invalid-feedback">
+                    Enter new password
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Change</button>
+        </form>
+    </div>
+   
+</body>
